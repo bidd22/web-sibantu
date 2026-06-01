@@ -69,21 +69,21 @@
                     <!-- Middle: Core Highlights -->
                     <div class="space-y-8 z-10 relative py-8">
                         <div class="flex items-start gap-4 group">
-                            <div class="w-10 h-10 rounded-xl bg-white/10 backdrop-blur-md flex items-center justify-center text-lg shadow-sm border border-white/10 group-hover:scale-110 transition duration-300">📋</div>
+                            <div class="w-10 h-10 rounded-xl bg-white/10 backdrop-blur-md flex items-center justify-center text-xs font-bold text-white shadow-sm border border-white/10 group-hover:scale-110 transition duration-300">01</div>
                             <div>
                                 <h4 class="font-bold text-xs text-white uppercase tracking-wider">Ajukan Bantuan</h4>
                                 <p class="text-[11px] text-indigo-100/80 mt-1 leading-relaxed">Formulir digital cepat, ringkas, dan dapat dilakukan kapan saja.</p>
                             </div>
                         </div>
                         <div class="flex items-start gap-4 group">
-                            <div class="w-10 h-10 rounded-xl bg-white/10 backdrop-blur-md flex items-center justify-center text-lg shadow-sm border border-white/10 group-hover:scale-110 transition duration-300">📊</div>
+                            <div class="w-10 h-10 rounded-xl bg-white/10 backdrop-blur-md flex items-center justify-center text-xs font-bold text-white shadow-sm border border-white/10 group-hover:scale-110 transition duration-300">02</div>
                             <div>
                                 <h4 class="font-bold text-xs text-white uppercase tracking-wider">Lacak Real-Time</h4>
                                 <p class="text-[11px] text-indigo-100/80 mt-1 leading-relaxed">Transparan. Pantau langsung setiap tahap verifikasi berkas Anda.</p>
                             </div>
                         </div>
                         <div class="flex items-start gap-4 group">
-                            <div class="w-10 h-10 rounded-xl bg-white/10 backdrop-blur-md flex items-center justify-center text-lg shadow-sm border border-white/10 group-hover:scale-110 transition duration-300">💬</div>
+                            <div class="w-10 h-10 rounded-xl bg-white/10 backdrop-blur-md flex items-center justify-center text-xs font-bold text-white shadow-sm border border-white/10 group-hover:scale-110 transition duration-300">03</div>
                             <div>
                                 <h4 class="font-bold text-xs text-white uppercase tracking-wider">Aduan Langsung</h4>
                                 <p class="text-[11px] text-indigo-100/80 mt-1 leading-relaxed">Laporkan kendala, kritik, atau saran langsung ke admin sistem.</p>
