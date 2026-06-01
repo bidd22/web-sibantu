@@ -16,7 +16,7 @@ class DatabaseSeeder extends Seeder
         User::create([
             'name' => 'Admin SIBANTU',
             'email' => 'admin@sibantu.com',
-            'password' => Hash::make('12345678'),
+            'password' => Hash::make('admin123'),
             'role' => 'admin',
             'phone' => '08123456789',
             'address' => 'Kantor Pusat SIBANTU',
@@ -31,24 +31,24 @@ class DatabaseSeeder extends Seeder
         ]);
 
         // Program bantuan
-       BantuanProgram::create([
-    'nama_program' => 'Paket Sembako',
-    'deskripsi' => 'Bantuan sembako bulanan untuk 100 KK kurang mampu.',
-    'kuota' => 100,
-    'deadline' => '2026-12-31', // diubah dari 2025
-]);
-BantuanProgram::create([
-    'nama_program' => 'Beasiswa Anak Sekolah',
-    'deskripsi' => 'Beasiswa Rp 500.000/bulan untuk 50 siswa.',
-    'kuota' => 50,
-    'deadline' => '2026-10-01',
-]);
-BantuanProgram::create([
-    'nama_program' => 'Pelatihan Kerja Online',
-    'deskripsi' => 'Pelatihan keterampilan digital gratis.',
-    'kuota' => 200,
-    'deadline' => '2026-12-01',
-]);
+        BantuanProgram::create([
+            'nama_program' => 'Paket Sembako',
+            'deskripsi' => 'Bantuan sembako bulanan untuk 100 KK kurang mampu.',
+            'kuota' => 100,
+            'deadline' => '2026-12-31', // diubah dari 2025
+        ]);
+        BantuanProgram::create([
+            'nama_program' => 'Beasiswa Anak Sekolah',
+            'deskripsi' => 'Beasiswa Rp 500.000/bulan untuk 50 siswa.',
+            'kuota' => 50,
+            'deadline' => '2026-10-01',
+        ]);
+        BantuanProgram::create([
+            'nama_program' => 'Pelatihan Kerja Online',
+            'deskripsi' => 'Pelatihan keterampilan digital gratis.',
+            'kuota' => 200,
+            'deadline' => '2026-12-01',
+        ]);
 
         // Menu default
         $menus = [
