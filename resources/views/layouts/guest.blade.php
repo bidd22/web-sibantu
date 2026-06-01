@@ -20,24 +20,29 @@
                 font-family: 'Inter', sans-serif;
             }
             .hero-gradient {
-                background: radial-gradient(circle at 50% 50%, rgba(79, 70, 229, 0.05) 0%, rgba(255, 255, 255, 0) 100%), #f8fafc;
+                background: 
+                    radial-gradient(circle at 50% 50%, rgba(79, 70, 229, 0.08) 0%, rgba(255, 255, 255, 0) 100%),
+                    linear-gradient(to right, rgba(99, 102, 241, 0.04) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(99, 102, 241, 0.04) 1px, transparent 1px),
+                    #f8fafc;
+                background-size: 100% 100%, 24px 24px, 24px 24px;
             }
         </style>
     </head>
-    <body class="text-gray-900 antialiased hero-gradient min-h-screen relative overflow-x-hidden flex items-center justify-center py-12">
+    <body class="text-gray-900 antialiased hero-gradient min-h-screen relative overflow-x-hidden flex items-center justify-center py-16">
         <!-- Floating decorative blurs -->
-        <div class="absolute top-0 left-0 -translate-x-1/3 -translate-y-1/3 w-[400px] h-[400px] bg-indigo-200/20 rounded-full blur-[80px] pointer-events-none"></div>
-        <div class="absolute bottom-0 right-0 translate-x-1/3 translate-y-1/3 w-[500px] h-[500px] bg-purple-200/20 rounded-full blur-[100px] pointer-events-none"></div>
+        <div class="absolute top-0 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gradient-to-tr from-indigo-300/10 to-indigo-500/10 rounded-full blur-[100px] pointer-events-none animate-pulse" style="animation-duration: 8s;"></div>
+        <div class="absolute bottom-0 right-1/4 translate-x-1/2 translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-tr from-purple-300/10 to-purple-500/10 rounded-full blur-[120px] pointer-events-none animate-pulse" style="animation-duration: 12s;"></div>
 
         <div class="w-full max-w-md px-6 flex flex-col items-center">
-            <div class="z-10 mb-2">
-                <a href="/" class="flex flex-col items-center gap-1 group transition">
-                    <span class="text-3xl font-extrabold tracking-wider bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent group-hover:scale-105 transition-transform duration-300">SIBANTU</span>
-                    <span class="text-[10px] font-bold tracking-widest text-indigo-500 uppercase">Sistem Bantuan Sosial</span>
+            <div class="z-10 mb-4 text-center">
+                <a href="/" class="flex flex-col items-center gap-1.5 group transition">
+                    <span class="text-4xl font-extrabold tracking-tight bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent group-hover:scale-105 transition-transform duration-300">SIBANTU</span>
+                    <span class="text-[10px] font-bold tracking-widest text-indigo-500/80 uppercase">Sistem Bantuan Sosial Modern</span>
                 </a>
             </div>
 
-            <div class="w-full mt-6 px-8 py-8 bg-white/90 backdrop-blur-md border border-slate-100 shadow-[0_20px_50px_rgba(79,70,229,0.06)] rounded-2xl z-10 transition-all duration-300 hover:shadow-[0_25px_60px_rgba(79,70,229,0.1)]">
+            <div class="w-full mt-4 px-8 py-9 bg-white/80 backdrop-blur-lg border border-white/60 shadow-[0_25px_60px_rgba(79,70,229,0.06)] rounded-3xl z-10 transition-all duration-300 hover:shadow-[0_30px_70px_rgba(79,70,229,0.12)]">
                 {{ $slot }}
             </div>
         </div>
