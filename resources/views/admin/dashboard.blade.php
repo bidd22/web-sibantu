@@ -5,7 +5,7 @@
     <!-- Header -->
     <div class="flex items-center justify-between border-b border-gray-100 pb-4">
         <div>
-            <h1 class="text-xl font-bold text-gray-900 tracking-tight">Dashboard Admin</h1>
+            <h1 class="text-xl font-bold text-gray-900 tracking-tight">Admin</h1>
             <p class="text-xs text-gray-500 mt-0.5">Ringkasan statistik data permohonan bantuan dan pengaduan warga.</p>
         </div>
     </div>
