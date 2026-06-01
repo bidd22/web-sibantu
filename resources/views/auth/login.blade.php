@@ -10,7 +10,7 @@
     <div class="flex justify-center mb-3">
         <div class="inline-flex items-center gap-1.5 px-3 py-1 bg-indigo-50 border border-indigo-100/60 rounded-full text-[10px] font-bold text-indigo-600 uppercase tracking-wider shadow-sm">
             <span class="w-1.5 h-1.5 rounded-full bg-indigo-500 animate-pulse"></span>
-            🔑 Portal Pengguna
+            Portal Pengguna
         </div>
     </div>
 
