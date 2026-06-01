@@ -1,5 +1,5 @@
 <?php
-
+use App\Http\Controllers\NewsController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PengajuanController;
 use App\Http\Controllers\PengaduanController;
@@ -17,6 +17,7 @@ Route::get('/', function () {
 
 // Auth routes (Breeze) - tidak perlu use lagi karena sudah di atas
 Route::middleware('auth')->group(function () {
+    Route::get('/api/news', [NewsController::class, 'fetch'])->name('news.fetch');
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
