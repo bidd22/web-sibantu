@@ -1,4 +1,12 @@
 <x-guest-layout>
+    <!-- Mobile-Only Brand Logo -->
+    <div class="md:hidden flex flex-col items-center gap-1 mb-6">
+        <a href="/" class="flex flex-col items-center gap-1">
+            <span class="text-3xl font-extrabold tracking-tight bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">SIBANTU</span>
+            <span class="text-[9px] font-bold tracking-widest text-indigo-500/80 uppercase">Bantuan Sosial Modern</span>
+        </a>
+    </div>
+
     <div class="flex justify-center mb-3">
         <div class="inline-flex items-center gap-1.5 px-3 py-1 bg-indigo-50 border border-indigo-100/60 rounded-full text-[10px] font-bold text-indigo-600 uppercase tracking-wider shadow-sm">
             <span class="w-1.5 h-1.5 rounded-full bg-indigo-500 animate-pulse"></span>
