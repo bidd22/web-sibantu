@@ -5,7 +5,7 @@
     <!-- Header -->
     <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
         <div>
-            <h1 class="text-3xl font-extrabold text-gray-900 tracking-tight">Dashboard Admin</h1>
+            <h1 class="text-3xl font-extrabold text-gray-900 tracking-tight">Dashboard</h1>
             <p class="text-gray-500 mt-1">Pantau statistik permohonan bantuan, kelola pengaduan warga, dan konfigurasi sistem secara efisien.</p>
         </div>
     </div>
