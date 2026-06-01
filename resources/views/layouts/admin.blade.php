@@ -103,11 +103,20 @@
             </div>
 
             <!-- Top bar Actions -->
-            <div class="flex items-center gap-4">
+            <div class="flex items-center gap-2">
                 <a href="{{ route('dashboard') }}" class="text-xs font-semibold text-slate-500 hover:text-indigo-600 bg-slate-50 hover:bg-indigo-50 border border-slate-200 hover:border-indigo-100 px-3.5 py-2 rounded-xl transition duration-150 flex items-center gap-1.5">
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"/></svg>
                     Halaman Warga
                 </a>
+                <form method="POST" action="{{ route('logout') }}" class="inline-flex">
+                    @csrf
+                    <button type="submit" class="text-xs font-semibold text-rose-500 hover:text-white bg-rose-50 hover:bg-rose-600 border border-rose-200 hover:border-rose-600 px-3.5 py-2 rounded-xl transition duration-150 flex items-center gap-1.5" id="admin-logout-btn">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75" />
+                        </svg>
+                        Log Out
+                    </button>
+                </form>
             </div>
         </header>
 

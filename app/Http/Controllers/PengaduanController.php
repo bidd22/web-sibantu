@@ -33,6 +33,6 @@ class PengaduanController extends Controller
         'status' => 'diterima',
     ]);
 
-    return redirect()->route('dashboard') . '#pengaduan';
+    return redirect()->to(route('dashboard') . '#pengaduan')->with('success', 'Pengaduan berhasil dikirim! Kami akan segera menindaklanjuti.');
 }
 }

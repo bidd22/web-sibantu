@@ -29,7 +29,7 @@ class PengajuanController extends Controller
         'status' => 'pending',
     ]);
 
-    return redirect()->route('dashboard') . '#riwayat';
+    return redirect()->to(route('dashboard') . '#riwayat')->with('success', 'Pengajuan bantuan berhasil dikirim! Silakan pantau status pengajuan Anda.');
 }
 
     public function riwayat()
