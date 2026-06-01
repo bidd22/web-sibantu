@@ -1,54 +1,60 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
 @section('content')
-<div class="min-h-screen bg-gradient-to-br from-[#f8fafc] via-[#f1f5f9] to-[#eef2f6] py-8 antialiased">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
-        
-        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between border-b border-slate-200/60 pb-5 gap-4">
-            <div class="space-y-1">
-                <div class="flex items-center gap-2 text-xs font-bold text-indigo-600 uppercase tracking-widest">
-                    <span class="px-2 py-0.5 bg-indigo-50 border border-indigo-100 rounded-md">Pusat Kendali</span>
-                    <span class="text-slate-300">•</span>
-                    <span class="text-slate-500 font-medium">Manajemen Program</span>
-                </div>
-                <h1 class="text-3xl font-black text-slate-900 tracking-tight">Program Bantuan</h1>
-                <p class="text-xs font-medium text-slate-500">Konfigurasi alokasi bantuan sosial, batasan kuota penerima, dan masa aktif pendaftaran.</p>
+<div class="space-y-6 antialiased">
+    <!-- Header Dashboard -->
+    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between border-b border-slate-200/60 pb-5 gap-4">
+        <div class="space-y-1">
+            <div class="flex items-center gap-2 text-xs font-bold text-indigo-600 uppercase tracking-widest">
+                <span class="px-2 py-0.5 bg-indigo-50 border border-indigo-100 rounded-md">Pusat Kendali</span>
+                <span class="text-slate-300">•</span>
+                <span class="text-slate-500 font-medium">Manajemen Program</span>
             </div>
-            
-            <a href="{{ route('admin.programs.create') }}" class="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white text-xs font-extrabold rounded-xl shadow-lg shadow-emerald-600/20 hover:shadow-xl hover:shadow-emerald-600/30 hover:-translate-y-0.5 transition-all duration-200 shrink-0 self-start sm:self-auto">
-                <svg class="w-4 h-4 text-emerald-100" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
-                </svg>
-                Tambah Program
+            <h1 class="text-3xl font-black text-slate-900 tracking-tight">Program Bantuan</h1>
+            <p class="text-xs font-medium text-slate-500">Konfigurasi alokasi bantuan sosial, batasan kuota penerima, dan masa aktif pendaftaran.</p>
+        </div>
+        
+        <a href="{{ route('admin.programs.create') }}" class="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white text-xs font-extrabold rounded-xl shadow-lg shadow-emerald-600/20 hover:shadow-xl hover:shadow-emerald-600/30 hover:-translate-y-0.5 transition-all duration-200 shrink-0 self-start sm:self-auto">
+            <svg class="w-4 h-4 text-emerald-100" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+            </svg>
+            Tambah Program
+        </a>
+    </div>
+
+    <!-- Quick Navigation Tabs -->
+    <div class="bg-white border border-slate-200/60 rounded-2xl p-4 shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div class="space-y-0.5">
+            <h2 class="text-xs font-extrabold uppercase tracking-wider text-slate-400">Pusat Kendali Cepat</h2>
+            <p class="text-[11px] text-slate-500 font-medium">Beralih antar menu manajemen dengan satu klik.</p>
+        </div>
+        
+        <div class="flex flex-wrap items-center gap-2 p-1 bg-slate-50 border border-slate-100 rounded-xl self-start sm:self-auto">
+            <!-- Kelola Pengajuan -->
+            <a href="{{ route('admin.pengajuans.index') }}" 
+               class="px-4 py-2 text-xs font-extrabold rounded-lg transition duration-150 {{ request()->routeIs('admin.pengajuans.*') ? 'bg-indigo-50 text-indigo-700 shadow-2xs border border-indigo-100/50' : 'text-slate-500 hover:text-slate-800 hover:bg-slate-100/50' }}">
+                Kelola Pengajuan
+            </a>
+
+            <!-- Pengaduan Warga -->
+            <a href="{{ route('admin.pengaduans.index') }}" 
+               class="px-4 py-2 text-xs font-extrabold rounded-lg transition duration-150 {{ request()->routeIs('admin.pengaduans.*') ? 'bg-rose-50 text-rose-700 shadow-2xs border border-rose-100/50' : 'text-slate-500 hover:text-slate-800 hover:bg-slate-100/50' }}">
+                Pengaduan
+            </a>
+
+            <!-- Atur Program -->
+            <a href="{{ route('admin.programs.index') }}" 
+               class="px-4 py-2 text-xs font-extrabold rounded-lg transition duration-150 {{ request()->routeIs('admin.programs.*') ? 'bg-emerald-50 text-emerald-700 shadow-2xs border border-emerald-100/50' : 'text-slate-500 hover:text-slate-800 hover:bg-slate-100/50' }}">
+                Atur Program
+            </a>
+
+            <!-- Navigasi (Manajemen Menu) -->
+            <a href="{{ route('admin.menus.index') }}" 
+               class="px-4 py-2 text-xs font-extrabold rounded-lg transition duration-150 {{ request()->routeIs('admin.menus.*') ? 'bg-amber-50 text-amber-700 shadow-2xs border border-amber-100/50' : 'text-slate-500 hover:text-slate-800 hover:bg-slate-100/50' }}">
+                Navigasi
             </a>
         </div>
-
-        <div class="bg-white/80 backdrop-blur-md border border-slate-200 rounded-2xl p-5 shadow-sm flex flex-col xl:flex-row xl:items-center justify-between gap-4">
-            <div class="space-y-0.5">
-                <h2 class="text-xs font-black uppercase tracking-wider text-slate-400">Navigasi Dashboard</h2>
-                <p class="text-xs text-slate-500 font-medium">Beralih antar menu manajemen dengan cepat melalui panel kontrol terintegrasi.</p>
-            </div>
-            
-            <div class="flex flex-wrap items-center gap-2 p-1.5 bg-slate-100/80 border border-slate-200/40 rounded-xl self-start xl:self-auto">
-                <a href="{{ route('admin.pengajuans.index') }}" class="px-4 py-2 text-xs font-bold rounded-lg text-indigo-600 hover:bg-indigo-50 transition duration-150">
-                    Kelola Pengajuan
-                </a>
-
-                <a href="{{ route('admin.pengaduans.index') }}" class="px-4 py-2 text-xs font-bold rounded-lg text-rose-600 hover:bg-rose-50 transition duration-150">
-                    Pengaduan Warga
-                </a>
-
-                <a href="{{ route('admin.programs.index') }}" 
-                   class="px-4 py-2 text-xs font-bold rounded-lg transition-all duration-300 flex items-center gap-2 bg-gradient-to-r from-emerald-600 to-teal-600 text-white shadow-md shadow-emerald-200 scale-105">
-                    <span class="w-1.5 h-1.5 rounded-full bg-white animate-pulse"></span>
-                    Atur Program
-                </a>
-
-                <a href="{{ route('admin.menus.index') }}" class="px-4 py-2 text-xs font-bold rounded-lg text-amber-600 hover:bg-amber-50 transition duration-150">
-                    Navigasi
-                </a>
-            </div>
-        </div>
+    </div>
 
         <div class="bg-white rounded-2xl border border-indigo-100 shadow-xl shadow-slate-200/50 overflow-hidden">
             <div class="overflow-x-auto">
@@ -71,7 +77,7 @@
                                 {{ sprintf('%02d', $index + 1) }}
                             </td>
                             
-                            <td class="py-4.5 px-6 font-extrabold text-slate-900 group-hover/row:text-indigo-600 transition duration-150">
+                            <td class="py-4.5 px-6 font-normal text-slate-700 group-hover/row:text-indigo-600 transition duration-150">
                                 {{ $p->nama_program }}
                             </td>
                             
@@ -119,7 +125,5 @@
                 </table>
             </div>
         </div>
-
-    </div>
 </div>
 @endsection

@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
 @section('content')
 @php
@@ -65,6 +65,40 @@
             </div>
             <h1 class="text-3xl font-black text-slate-900 tracking-tight">Kelola Pengajuan Bantuan</h1>
             <p class="text-xs font-medium text-slate-500">Verifikasi, setujui, atau tolak permohonan bantuan dari masyarakat secara transparan.</p>
+        </div>
+    </div>
+
+    <!-- Quick Navigation Tabs -->
+    <div class="bg-white border border-slate-200/60 rounded-2xl p-4 shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div class="space-y-0.5">
+            <h2 class="text-xs font-extrabold uppercase tracking-wider text-slate-400">Pusat Kendali Cepat</h2>
+            <p class="text-[11px] text-slate-500 font-medium">Beralih antar menu manajemen dengan satu klik.</p>
+        </div>
+        
+        <div class="flex flex-wrap items-center gap-2 p-1 bg-slate-50 border border-slate-100 rounded-xl self-start sm:self-auto">
+            <!-- Kelola Pengajuan -->
+            <a href="{{ route('admin.pengajuans.index') }}" 
+               class="px-4 py-2 text-xs font-extrabold rounded-lg transition duration-150 {{ request()->routeIs('admin.pengajuans.*') ? 'bg-indigo-50 text-indigo-700 shadow-2xs border border-indigo-100/50' : 'text-slate-500 hover:text-slate-800 hover:bg-slate-100/50' }}">
+                Kelola Pengajuan
+            </a>
+
+            <!-- Pengaduan Warga -->
+            <a href="{{ route('admin.pengaduans.index') }}" 
+               class="px-4 py-2 text-xs font-extrabold rounded-lg transition duration-150 {{ request()->routeIs('admin.pengaduans.*') ? 'bg-rose-50 text-rose-700 shadow-2xs border border-rose-100/50' : 'text-slate-500 hover:text-slate-800 hover:bg-slate-100/50' }}">
+                Pengaduan
+            </a>
+
+            <!-- Atur Program -->
+            <a href="{{ route('admin.programs.index') }}" 
+               class="px-4 py-2 text-xs font-extrabold rounded-lg transition duration-150 {{ request()->routeIs('admin.programs.*') ? 'bg-emerald-50 text-emerald-700 shadow-2xs border border-emerald-100/50' : 'text-slate-500 hover:text-slate-800 hover:bg-slate-100/50' }}">
+                Atur Program
+            </a>
+
+            <!-- Navigasi (Manajemen Menu) -->
+            <a href="{{ route('admin.menus.index') }}" 
+               class="px-4 py-2 text-xs font-extrabold rounded-lg transition duration-150 {{ request()->routeIs('admin.menus.*') ? 'bg-amber-50 text-amber-700 shadow-2xs border border-amber-100/50' : 'text-slate-500 hover:text-slate-800 hover:bg-slate-100/50' }}">
+                Navigasi
+            </a>
         </div>
     </div>
 
