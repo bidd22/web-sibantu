@@ -15,6 +15,17 @@ class DashboardController extends Controller
         $pending = Pengajuan::where('status', 'pending')->count();
         $totalPengaduan = Pengaduan::count();
         $totalWarga = User::where('role', 'warga')->count();
-        return view('admin.dashboard', compact('totalPengajuan', 'pending', 'totalPengaduan', 'totalWarga'));
+        
+        $recentPengajuans = Pengajuan::with(['user', 'program'])->latest()->take(3)->get();
+        $recentPengaduans = Pengaduan::with('user')->latest()->take(3)->get();
+
+        return view('admin.dashboard', compact(
+            'totalPengajuan', 
+            'pending', 
+            'totalPengaduan', 
+            'totalWarga',
+            'recentPengajuans',
+            'recentPengaduans'
+        ));
     }
 }
