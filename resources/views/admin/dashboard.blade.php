@@ -2,7 +2,7 @@
 
 @section('content')
 <div>
-    <h1 class="text-3xl font-bold text-gray-900 mb-8">Admin Dashboard</h1>
+    <h1 class="text-3xl font-bold text-gray-900 mb-8">Admin</h1>
     <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
         <div class="bg-white rounded-2xl shadow-sm p-5 border border-gray-100">
             <div class="flex items-center justify-between">
