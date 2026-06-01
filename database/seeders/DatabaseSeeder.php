@@ -20,6 +20,14 @@ class DatabaseSeeder extends Seeder
             'role' => 'admin',
             'phone' => '08123456789',
             'address' => 'Kantor Pusat SIBANTU',
+
+            'name' => 'Admin SIBANTU',
+            'email' => 'admin@sibantu.com',
+            'password' => Hash::make('admin123'),
+            'role' => 'admin',
+            'phone' => '08123452090',
+            'address' => 'SIBANTU Office',
+    
         ]);
 
         // Contoh warga
