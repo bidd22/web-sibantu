@@ -318,8 +318,10 @@
                                             
                                             <template x-if="p.status === 'pending'">
                                                 <div class="flex gap-1">
-                                                    <button @click="submitStatus(p.updateRoute, 'disetujui')" title="Setujui"
-                                                            class="p-1.5 text-emerald-600 bg-emerald-50 border border-emerald-100 hover:bg-emerald-500 hover:text-white rounded-xl transition duration-150">
+                                                    <button @click="p.programKuota > 0 ? submitStatus(p.updateRoute, 'disetujui') : alert('Kuota program sudah habis!')" 
+                                                            :class="p.programKuota <= 0 ? 'opacity-50 cursor-not-allowed' : 'hover:bg-emerald-500 hover:text-white'"
+                                                            title="Setujui"
+                                                            class="p-1.5 text-emerald-600 bg-emerald-50 border border-emerald-100 rounded-xl transition duration-150">
                                                         <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                                                             <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                                                         </svg>
@@ -387,8 +389,9 @@
                                 
                                 <template x-if="p.status === 'pending'">
                                     <div class="flex gap-1">
-                                        <button @click="submitStatus(p.updateRoute, 'disetujui')"
-                                                class="px-2 py-1.5 text-xs font-extrabold bg-emerald-600 text-white rounded-xl shadow-md shadow-emerald-600/10 hover:bg-emerald-700 transition">
+                                        <button @click="p.programKuota > 0 ? submitStatus(p.updateRoute, 'disetujui') : alert('Kuota program sudah habis!')"
+                                                :class="p.programKuota <= 0 ? 'opacity-50 cursor-not-allowed' : 'hover:bg-emerald-700'"
+                                                class="px-2 py-1.5 text-xs font-extrabold bg-emerald-600 text-white rounded-xl shadow-md shadow-emerald-600/10 transition">
                                             Setuju
                                         </button>
                                         <button @click="submitStatus(p.updateRoute, 'ditolak')"
@@ -549,8 +552,9 @@
                                     class="px-4 py-2 bg-rose-600 hover:bg-rose-700 text-white text-xs font-extrabold rounded-xl shadow-md shadow-rose-600/10 transition">
                                 Tolak Berkas
                             </button>
-                            <button @click="submitStatus(selected.updateRoute, 'disetujui'); showDetail = false;" 
-                                    class="px-4 py-2 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white text-xs font-extrabold rounded-xl shadow-lg shadow-emerald-600/10 transition">
+                            <button @click="selected.programKuota > 0 ? (submitStatus(selected.updateRoute, 'disetujui'), showDetail = false) : alert('Kuota program sudah habis!')" 
+                                    :class="selected.programKuota <= 0 ? 'opacity-50 cursor-not-allowed' : 'hover:from-emerald-700 hover:to-teal-700'"
+                                    class="px-4 py-2 bg-gradient-to-r from-emerald-600 to-teal-600 text-white text-xs font-extrabold rounded-xl shadow-lg shadow-emerald-600/10 transition">
                                 Setujui Bantuan
                             </button>
                         </div>

@@ -434,7 +434,7 @@
                                 @else
                                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                                         @foreach($programs as $program)
-                                        <div class="program-card rounded-xl p-4" data-program-id="{{ $program->id }}">
+                                        <div class="program-card rounded-xl p-4 {{ $program->kuota <= 0 ? 'opacity-50 pointer-events-none' : '' }}" data-program-id="{{ $program->id }}">
                                             <div style="display:flex;align-items:flex-start;gap:12px;">
                                                 <div style="width:36px;height:36px;border-radius:9px;
                                                             background:var(--navy-50);border:1px solid var(--navy-100);
@@ -456,7 +456,11 @@
                                                         {{ $program->deskripsi }}
                                                     </p>
                                                     <div style="display:flex;gap:12px;font-size:.68rem;font-weight:600;color:#8fa3bf;">
-                                                        <span>Kuota: <span style="color:var(--navy-600);">{{ $program->kuota }}</span></span>
+                                                        @if($program->kuota <= 0)
+                                                            <span>Sisa Kuota: <span style="color:#ef4444;">Habis</span></span>
+                                                        @else
+                                                            <span>Sisa Kuota: <span style="color:var(--navy-600);">{{ $program->kuota }}</span></span>
+                                                        @endif
                                                         <span>Batas: <span style="color:var(--navy-600);">{{ \Carbon\Carbon::parse($program->deadline)->format('d M Y') }}</span></span>
                                                     </div>
                                                 </div>
